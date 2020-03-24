@@ -1,0 +1,197 @@
+/*RESET CSS*/
+				html, body, div, span, applet, object, iframe,
+				h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+				a, abbr, acronym, address, big, cite, code,
+				del, dfn, em, img, ins, kbd, q, s, samp,
+				small, strike, strong, sub, sup, tt, var,
+				b, u, i, center,
+				dl, dt, dd, ol, ul, li,
+				fieldset, form, label, legend,
+				table, caption, tbody, tfoot, thead, tr, th, td,
+				article, aside, canvas, details, embed, 
+				figure, figcaption, footer, header, hgroup, 
+				menu, nav, output, ruby, section, summary,
+				time, mark, audio, video {
+					margin: 0;
+					padding: 0;
+					border: 0;
+					font-size: 100%;
+					font: inherit;
+					vertical-align: baseline;
+				}
+				/* HTML5 display-role reset for older browsers */
+				article, aside, details, figcaption, figure, 
+				footer, header, hgroup, menu, nav, section {
+					display: block;
+				}
+				body {
+					line-height: 1;
+				}
+				ol, ul {
+					list-style: none;
+				}
+				blockquote, q {
+					quotes: none;
+				}
+				blockquote:before, blockquote:after,
+				q:before, q:after {
+					content: '';
+					content: none;
+				}
+				table {
+					border-collapse: collapse;
+					border-spacing: 0;
+				}
+
+/* My CSS STYLE*/
+	body, header, main, footer, #menu {
+		width: 840px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	body {
+		font-family: "Times New Roman";
+		font-size: 16px;	
+	}
+	header {
+		position: relative;
+		height: 60px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: rgb(82,82,82);
+		color: rgb(0,255,128);
+		text-align: center;
+		font-size: 36px;
+	}
+
+	header h3 {
+		font-size: 16px;
+		font-style: italic;
+	}
+	#menu {
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background-color: rgb(0,72,0);
+		color: rgb(0,255,128);
+		text-align: right;
+	}
+	#menu button {
+		border-radius: 8px;
+		margin-right: 8px;
+		outline: none;
+	}
+	#menu button:hover {
+		background-color: rgb(200,200,200);
+		outline: none;
+	}
+	main {
+		position: absolute;
+		background-color: rgb(82,82,82);
+		height: 640px;
+		height:100%;
+	}
+	.input_block {
+		position: absolute;
+		display: inline-block;
+		margin: 20px;
+		opacity: 0.8;
+		padding: 20px;
+		width: 200px;
+		height: 200px;
+		background-color: rgb(192,192,192);
+		text-align: right;
+	}
+	.input_block input, 
+	select {
+		border-radius: 3px;
+		outline: none;
+	}
+	p {
+		text-align: center;
+		color: rgb(0,102,192);
+	}
+	.input_block h3 {
+		font-size: 22px;
+		text-align: center;
+		font-weight: bold;
+	}
+	#shot {
+		position: absolute;
+		top: 260px;
+		left: 0px;
+		margin: 20px;
+		font-size: 32px;
+		width: 240px;
+		height: 90px;
+		background-color: rgb(0,72,0);
+		color: #a3a3a3;
+		border-radius: 5px;
+		border-color: rgb(102,102,102);	
+		float: left;
+		font-weight: bold;
+		outline: none;
+	}
+	#result {
+		position:absolute;
+		top: 280px;
+		left: 320px;
+		width: 500px;
+		font-size: 16px;
+		color: aqua;
+	}
+	#chance_true {
+		float: left;
+		margin-left: 50px;
+		text-align:center;
+		color: rgb(0,255,128);
+		font-size: 72px;
+	}
+	#chance_ideal {
+		float:left;
+		margin-left: 125px;
+		text-align:left;
+		color: rgb(0,186,0);
+		font-size: 72px;
+	}
+	#chart {
+		position: absolute;
+		top: 350px;
+		left:10px;
+		margin-top: 40px;
+		margin-left: 10px;
+		width: 800px;	
+	}
+	#chart div {
+		float : left;
+		height: 30px;
+	}
+	#chart pre {
+		color: aliceblue;
+	}
+	pre {
+		font-size: 12px;
+		font-family: Arial, Helvetica, sans-serif;	
+	}
+	#description {
+		position: absolute;
+		top: 460px;
+		left: 220px;
+		margin: 0px;
+		padding: 0px;
+		border: 0px;
+		width: 400px;
+		text-align: center;		
+	}
+	#description div {
+		float: left;
+		text-align: center;
+		width: 100px;
+	}
+	footer {
+		position: absolute;
+		top: 620px;	
+		background-color: rgb(0,72,0);
+		color: rgb(0,255,128);
+		text-align: right;
+		font-size: 16px;
+	}

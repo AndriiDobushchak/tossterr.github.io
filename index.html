@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Chance calculator</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body bgcolor = "#525252">
+	<header>		
+			<h1>Chance to hit calculator</h1>
+			<h3>for precision rifle shooting</h3>
+	</header>
+	<div id = "menu">
+			Shooter name:
+			<input type="text" placeholder="Luky Luke" value="Lucky Luke">
+			<button><a href="index_ukr.html" style="text-decoration: none;">urk/eng</a></button>
+			<button>load</button>
+			<button>save</button>
+			<button id="about">about</button>
+	</div>
+	<main>
+		<img src="image/rifle.jpg" alt="" style="position: absolute; opacity: 0.5;width: 840px;">	
+	<!-- ballistic block -->
+		<div class="input_block">
+			<h3>Ballistic</h3>
+			<br>
+			<ul>
+				<li><p>Muzzle velocity</p> m/s
+					<input id="velocity" type="number" name="velocity" placeholder="790" min="710" max="997" value="790";>
+				</li>
+				<li><p>Caliber</p>
+					<select id="caliber">
+						<option value="1">.223rem</option>
+						<option value="2" selected="">.308win</option>
+						<option value="3">.338LM</option>
+					</select>
+				</li>
+				<li><p>Bullet weight</p>grain
+					<select id="bullet_weight">
+						<option id = "223_1" class="233weight" value="[0.000002, -0.2, 24, 0.00025, 0.1, 12]">55</option>
+						<option id = "223_2" class="233weight" value="[0.0000016, -0.12,	12,	0.00014, 0.05, 5]">75</option>
+						<option id = "308_1" class="308weight" value="[0.0000014, 0.18, -10,	0.00007, -0.03, 2]">155</option>
+						<option id = "308_2" class="308weight" value="[0.0000014, 0.18, -10, 0.000045, 0, 0]" selected="">175</option>
+						<option id = "338_1" class="338weight" value="[0.00000085, 0.08, -1, 0.00004, -0.0025, 0]">250</option>
+						<option id = "338_2" class="338weight" value="[0.00000078, 0.1, -10, 0.00004, -0.0067, 0.27]">285</option>
+					</select>
+				</li>
+				<li><p>Accuracy at 100m</p>MOA
+					<input id="accuraty_100" type="number" name="accuracy" placeholder="0.5" min="0.1" max="2" step="0.1" value="0.5">	
+				</li>
+		</div>
+	<!-- weather and target or Conditions -->
+		<div class="input_block" style="left: 280px;">
+			<h3>Conditions</h3>
+			<br>
+			<ul>
+				<li><p>Wind speed</p>m/s
+					<input id="wind_speed" type="number" min="0" max="10" placeholder="0" value="4">	
+				</li>
+				<li><p>Wind direction</p>degrees
+					<input id="wind_direction" type="number" min="0" max="360" placeholder="0" value="90">
+				</li>
+				<li><p>Range</p>m
+					<input id="range" type="number" min="100" max="1100" placeholder="500" value="500">	
+				</li>
+				<li><p>Target diametr</p>sm
+					<input id="target" type="number" min="1" max="100" placeholder="30" value="30">	
+				</li>
+			</ul>
+		</div>
+	<!-- shooter -->
+		<div class="input_block" style="left: 560px;">
+			<h3>Shooter</h3>
+			<br>
+			<ul>
+				<li><p>Shooter position</p>
+					<select id="position">
+						<option value="1" selected>lying down</option>
+						<option value="1.1">tripod</option>
+						<option value="1.2">sitting</option>
+						<option value="1.4">knee</option>
+						<option value="2">standing</option>	
+					</select>
+				</li>
+				<li><p>Shooter skill</p>
+					<select id="skill">
+						<option value="2">rookie</option>
+						<option value="1.5" selected>skilled</option>
+						<option value="1.2">advanced</option>
+						<option value="1">expert</option>	
+					</select>
+				</li>
+				<li><p>Range error</p>+/- m
+					<input id="range_error" type="number" min="1" max="50" placeholder="1" value="10">
+				</li>
+				<li><p>Wind speed error</p>+/- m/s
+					<input id="wind_speed_error" type="number" min="1" max="5" placeholder="1" value="1">	
+				</li>	
+			</ul>
+		</div>
+	<!-- Result  Take a shot-->
+		<button id="shot">EVALUTE</button>
+		<div id="result">
+			<pre>       Chance of hitting the target: 	 			 Chance of hitting the target without error's:</pre>
+			<div id=chance_true>75<span>%</span></div>
+			<div id=chance_ideal>95<span>%</span></div>
+		</div>
+		
+		<div id="description">				
+			<div style="background-color: rgb(0,182,0);">100%...90%</div>
+			<div style="background-color: rgb(162,255,162);">60%...90%</div>
+			<div style="background-color: rgb(255,255,0);">40%...60%</div>
+			<div style="background-color: rgb(252,0,0);">40%...0%</div>
+		</div>
+	<!-- colored diagram -->
+		<div id = "chart">
+			<div id="95" style="background-color: rgb(0,182,0); width: 200px;"></div>
+			<div id="75" style="background-color: rgb(162,255,162); width: 200px;"></div>
+			<div id="55" style="background-color: rgb(255,255,0); width: 200px;"></div>
+			<div id="35" style="background-color: rgb(252,0,0); width: 200px;"></div>
+			<br>
+			<br>	
+			<pre>100                       200                       300                       400                       500                       600                       700                       800                      900m</pre>
+		</div>	
+	</main>
+	<footer>Lviv - 2020. Lv-476.JS Core project. Designed and created by Andrii Dobushchak (tossterr@gmail.com)</footer>
+	<script src="script/script.js"></script>
+</body>
+</html>
